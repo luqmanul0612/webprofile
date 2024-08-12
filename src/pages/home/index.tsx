@@ -29,7 +29,9 @@ const HomePage = () => {
               </p>
             </div>
             <div className={classNames.buttonWrapper}>
-              <GlowButton particles={15}>Contact Me</GlowButton>
+              <GlowButton particles={15} playAnimationOnMobile>
+                Contact Me
+              </GlowButton>
               <div className={classNames.medsosContent}>
                 <GlowButton isIcon particles={10}>
                   <Instagram className={classNames.medsos} />
@@ -46,7 +48,7 @@ const HomePage = () => {
         </div>
         <div className={classNames.imageWrapper}>
           <img src={meBlack} className={classNames.image} />
-          <div className={classNames.circle}/>
+          <div className={classNames.circle} />
         </div>
       </div>
     </div>

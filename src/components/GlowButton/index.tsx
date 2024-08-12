@@ -71,13 +71,13 @@ const GlowButton = React.forwardRef<Partial<HTMLButtonElement>, ButtonProps>(
       <button
         {...rest}
         ref={buttonRef}
-        data-play-on-mobile={playAnimationOnMobile ? "true" : "false"}
         className={clsx(
           classNames.main,
           {
             [classNames.fullWidth]: fullWidth,
             [classNames.isIcon]: isIcon,
             [classNames.playAnimation]: playAnimation,
+            [classNames.playAnimationOnMobile]: props.playAnimationOnMobile,
           },
           className
         )}

@@ -57,13 +57,11 @@
   }
 
   @media (hover: none) {
-    &[data-play-on-mobile="true"] {
+    &.playAnimationOnMobile {
       @include animate-button;
     }
-    &[data-play-on-mobile="false"] {
-      &:hover {
-        @include animate-button;
-      }
+    &:hover {
+      @include animate-button;
     }
   }
 }
