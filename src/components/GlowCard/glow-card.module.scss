@@ -1,0 +1,54 @@
+@use "/src/utils/styles/colors.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &[data-size="small"] {
+    &::before {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &[data-size="default"] {
+    &::before {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &[data-size="large"] {
+    &::before {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: radial-gradient(var(--glow-color), transparent, transparent);
+    top: var(--y);
+    left: var(--x);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.5s, top 0s, left 0s;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(3, 7, 13, 0.75);
+    inset: 1.5px;
+    border-radius: 10px;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+}

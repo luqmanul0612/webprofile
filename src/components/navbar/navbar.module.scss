@@ -1,0 +1,54 @@
+@use "/src/utils/styles/colors.scss";
+
+.main {
+  display: flex;
+  justify-content: center;
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: -20px;
+    top: -20px;
+    padding-top: 20px;
+    width: calc(100% + 40px);
+    border-radius: 0;
+    height: 80px;
+    &::before,
+    &::after {
+      border-radius: 0;
+    }
+    > div {
+      max-width: calc(1200px - 80px);
+      width: 100%;
+      border-radius: 0;
+      display: flex;
+      padding: 20px 0;
+      .logo {
+        font-size: 25px;
+        font-weight: 600;
+        color: colors.$sky-200;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          display: flex;
+          right: -11px;
+          top: 22px;
+          width: 7px;
+          height: 7px;
+          min-width: 5px;
+          min-height: 5px;
+          border-radius: 100%;
+          background-color: colors.$sky-500;
+        }
+      }
+    }
+  }
+}

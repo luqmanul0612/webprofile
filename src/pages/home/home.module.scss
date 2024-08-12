@@ -1,0 +1,194 @@
+@use "/src/utils/styles/colors.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    gap: 10px;
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 55%;
+      gap: 10px;
+    }
+    .mainContent {
+      padding: 40px;
+      > div {
+        gap: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+      .textWrapper {
+        display: flex;
+        flex-direction: column;
+        > p:nth-child(1) {
+          font-size: 20px;
+          font-weight: 600;
+          color: colors.$sky-200;
+          margin: 0;
+          opacity: 0.8;
+          width: fit-content;
+          transition: 0.3s all ease-in-out;
+          &:hover {
+            color: colors.$sky-400;
+            opacity: 1;
+          }
+        }
+        > p:nth-child(2) {
+          font-size: 45px;
+          font-weight: 700;
+          color: colors.$sky-200;
+          margin: 0;
+          line-height: 1.2;
+          opacity: 0.8;
+          width: fit-content;
+          transition: 0.3s all ease-in-out;
+          > span {
+            font-weight: 500;
+          }
+          &:hover {
+            color: colors.$sky-400;
+            opacity: 1;
+          }
+        }
+        .name {
+          font-size: 38px;
+          font-weight: 700;
+          color: colors.$sky-200;
+          margin: 0;
+          line-height: 1.2;
+          width: fit-content;
+          position: relative;
+          transition: 0.3s all ease-in-out;
+          &:hover {
+            color: colors.$sky-400;
+          }
+          > span {
+            font-weight: 500;
+          }
+          @keyframes animateDot {
+            0% {
+              opacity: 0;
+              left: 0;
+            }
+            20% {
+              opacity: 1;
+            }
+            80% {
+              opacity: 1;
+            }
+            100% {
+              left: 95%;
+              opacity: 0;
+            }
+          }
+          .line {
+            position: absolute;
+            min-height: 2px;
+            width: 100%;
+            background-color: #0285c736;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+          }
+          .dot {
+            position: absolute;
+            min-height: 80px;
+            min-width: 160px;
+            width: 160px;
+            height: 80px;
+            overflow: hidden;
+            top: -80px;
+            left: 0;
+            transform: translateX(-80px);
+            animation: animateDot 10s linear infinite;
+            &::before {
+              content: "";
+              position: absolute;
+              min-height: 160px;
+              min-width: 160px;
+              width: 160px;
+              height: 160px;
+              background: radial-gradient(
+                colors.$sky-300,
+                transparent,
+                transparent,
+                transparent
+              );
+              opacity: 0.6;
+            }
+          }
+          &:hover {
+            .dot {
+              animation-play-state: paused;
+            }
+          }
+        }
+        > p:nth-child(4) {
+          font-size: 16px;
+          font-weight: 400;
+          color: colors.$sky-200;
+          margin: 0;
+          margin-top: 10px;
+          opacity: 0.6;
+          transition: 0.3s all ease-in-out;
+          &:hover {
+            color: colors.$sky-400;
+            opacity: 1;
+          }
+        }
+      }
+      .buttonWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .medsosContent {
+          display: flex;
+          gap: 10px;
+          .medsos {
+            color: colors.$sky-200;
+            width: 30px;
+          }
+        }
+      }
+    }
+    .imageWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      position: relative;
+      overflow: hidden;
+      .circle {
+        display: flex;
+        min-width: 90%;
+        min-height: 90%;
+        height: 90%;
+        width: 90%;
+        top: 20%;
+        right: -10%;
+        position: absolute;
+        background-color: colors.$sky-500;
+        border-radius: 100%;
+        transition: 0.5s ease-in-out all;
+      }
+      &:hover {
+        .circle {
+          background-color: colors.$sky-800;
+        }
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
