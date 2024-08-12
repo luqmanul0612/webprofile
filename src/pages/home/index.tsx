@@ -5,7 +5,6 @@ import Linkedin from "/src/assets/linkedin.svg?react";
 import Github from "/src/assets/github.svg?react";
 import GlowCard from "../../components/GlowCard";
 import GlowButton from "../../components/GlowButton";
-import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
@@ -48,29 +47,6 @@ const HomePage = () => {
         <div className={classNames.imageWrapper}>
           <img src={meBlack} className={classNames.image} />
           <div className={classNames.circle}/>
-          {/* <motion.svg
-            className={classNames.circle}
-            viewBox="0 0 530 530"
-            xmlns="http://w3.org/2000/svg"
-          >
-            <motion.circle
-              cx="265"
-              cy="265"
-              r="250"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              initial={{ strokeDasharray: "24 10 0 0" }}
-              animate={{
-                strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-                rotate: [120, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            />
-          </motion.svg> */}
         </div>
       </div>
     </div>
