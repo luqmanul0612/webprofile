@@ -30,7 +30,12 @@ const Navbar: FC<NavbarProps> = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div className={classNames.main}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className={classNames.main}
+    >
       <div className={classNames.container}>
         <GlowCard size="large" className={classNames.navbar}>
           <div className={classNames.logo}>
@@ -67,7 +72,7 @@ const Navbar: FC<NavbarProps> = (props) => {
         </GlowCard>
         <AnimatePresence mode="wait">{props.children}</AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
