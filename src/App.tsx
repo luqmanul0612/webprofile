@@ -5,6 +5,7 @@ import HomePage from "./pages/home";
 import Navbar from "./components/navbar";
 import PortofoliosPage from "./pages/portofolios";
 import ExperiencesPage from "./pages/experiences";
+import ContactPage from "./pages/contact";
 
 export default function App() {
   const element = useRoutes([
@@ -19,6 +20,10 @@ export default function App() {
     {
       path: "/experiences",
       element: <ExperiencesPage />,
+    },
+    {
+      path: "/contact",
+      element: <ContactPage />,
     },
   ]);
 

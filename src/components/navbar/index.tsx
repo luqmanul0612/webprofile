@@ -19,6 +19,10 @@ const menuData = [
     label: "Experiences",
     path: "/experiences",
   },
+  {
+    label: "Contact",
+    path: "/contact",
+  },
 ];
 
 type NavbarProps = {
