@@ -4,7 +4,7 @@ import GlowCard from "../GlowCard";
 import clsx from "clsx";
 import { FC } from "react";
 import GlowButton from "../GlowButton";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const menuData = [
   {
@@ -65,7 +65,7 @@ const Navbar: FC<NavbarProps> = (props) => {
             </GlowButton>
           </div>
         </GlowCard>
-        {props.children}
+        <AnimatePresence mode="wait">{props.children}</AnimatePresence>
       </div>
     </div>
   );

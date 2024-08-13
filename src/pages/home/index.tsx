@@ -13,7 +13,7 @@ const HomePage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={classNames.main}>
+    <motion.div exit={{ opacity: 0 }} className={classNames.main}>
       <div className={classNames.container}>
         <motion.div
           initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const HomePage = () => {
           />
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
