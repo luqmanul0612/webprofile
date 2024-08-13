@@ -2,7 +2,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import classNames from "./navbar.module.scss";
 import GlowCard from "../GlowCard";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import { FC } from "react";
 import GlowButton from "../GlowButton";
 
