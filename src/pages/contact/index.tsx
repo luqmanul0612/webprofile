@@ -59,7 +59,7 @@ const ContactPage = () => {
 
   const onSubmit = form.handleSubmit((values) => {
     window.open(
-      `https://api.whatsapp.com/send?phone=6289602930021&text=Hello%20Nama%20saya%20${values.name}%20(${values.email})%2C%0A${values.message}`,
+      `https://api.whatsapp.com/send?phone=6289602930021&text=Hello%20nama%20saya%20${values.name}%20(${values.email})%2C%0A${values.message}`,
       "_blank"
     );
   });
