@@ -43,8 +43,10 @@
     padding: 10px;
   }
   &:disabled {
-    background-color: #bfdbfe;
+    background-color: colors.$slate-900;
+    color: colors.$slate-600;
     cursor: not-allowed;
+    pointer-events: none;
   }
   @media (hover: hover) {
     &:hover {

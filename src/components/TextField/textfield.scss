@@ -26,16 +26,16 @@
       width: 100%;
       color: colors.$sky-200;
       outline: none;
-      border: 1.5px solid #354b69;
-      background-color: #0f1a29;
-      border-radius: 8px;
-      padding: 0 10px;
+      border: 1.5px solid #12192d;
+      background-color: #0b101e;
+      border-radius: 15px;
+      padding: 0 15px;
       resize: none;
       padding-right: 35px;
       height: 46px;
       transition: 0.2s all ease-in-out;
       &::placeholder {
-        color: colors.$slate-500;
+        color: colors.$slate-600;
       }
       &:focus {
         border: 1.5px solid #2f4462;

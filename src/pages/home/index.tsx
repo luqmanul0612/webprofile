@@ -8,7 +8,7 @@ import GlowButton from "../../components/GlowButton";
 import { useState } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import ModalMessage from "../../components/ModalMessage";
+import { useNavigate } from "react-router-dom";
 
 const medsosData = [
   {
@@ -26,14 +26,11 @@ const medsosData = [
 ];
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [modalMessage, setModalMessage] = useState({ open: false, key: 0 });
 
   const contactMe = () => {
-    setModalMessage({
-      open: true,
-      key: Date.now(),
-    });
+    navigate("/contact");
   };
 
   const onClickUrl = (url: string): void => {
@@ -42,11 +39,6 @@ const HomePage = () => {
 
   return (
     <motion.div exit={{ opacity: 0 }} className={classNames.main}>
-      <ModalMessage
-        key={modalMessage.key}
-        open={modalMessage.open}
-        onClose={() => setModalMessage((prev) => ({ ...prev, open: false }))}
-      />
       <div className={classNames.container}>
         <motion.div
           initial={{ opacity: 0 }}
