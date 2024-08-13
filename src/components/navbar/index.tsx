@@ -2,9 +2,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import classNames from "./navbar.module.scss";
 import GlowCard from "../GlowCard";
 import clsx from "clsx";
-import { FC } from "react";
-import GlowButton from "../GlowButton";
+import { FC, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import ResumeBtn from "../ResumeButton";
 
 const menuData = [
   {
@@ -32,7 +32,8 @@ type NavbarProps = {
 const Navbar: FC<NavbarProps> = (props) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
+  const [startAnimate, setStartAnimate] = useState(false);
+  console.log("first", { startAnimate });
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -69,9 +70,22 @@ const Navbar: FC<NavbarProps> = (props) => {
                 </li>
               ))}
             </ul>
-            <GlowButton className={classNames.btnResume} particles={15}>
-              Resume
-            </GlowButton>
+            <motion.div
+              animate={
+                pathname !== "/"
+                  ? { maxWidth: 120, opacity: 1 }
+                  : { maxWidth: 0, opacity: 0 }
+              }
+              style={{ overflow: startAnimate ? "hidden" : "visible" }}
+              onAnimationStart={() =>
+                requestAnimationFrame(() => setStartAnimate(true))
+              }
+              onAnimationComplete={() =>
+                requestAnimationFrame(() => setStartAnimate(false))
+              }
+            >
+              <ResumeBtn />
+            </motion.div>
           </div>
         </GlowCard>
         <AnimatePresence mode="wait">{props.children}</AnimatePresence>

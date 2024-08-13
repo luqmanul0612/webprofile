@@ -9,6 +9,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import ResumeBtn from "../../components/ResumeButton";
 
 const medsosData = [
   {
@@ -71,17 +72,20 @@ const HomePage = () => {
               >
                 Contact Me
               </GlowButton>
-              <div className={classNames.medsosContent}>
-                {medsosData.map((data) => (
-                  <GlowButton
-                    key={data.url}
-                    onClick={() => onClickUrl(data.url)}
-                    isIcon
-                    particles={10}
-                  >
-                    {data.icon}
-                  </GlowButton>
-                ))}
+              <div className={classNames.buttonGroup}>
+                <div className={classNames.medsosContent}>
+                  {medsosData.map((data) => (
+                    <GlowButton
+                      key={data.url}
+                      onClick={() => onClickUrl(data.url)}
+                      isIcon
+                      particles={10}
+                    >
+                      {data.icon}
+                    </GlowButton>
+                  ))}
+                </div>
+                <ResumeBtn />
               </div>
             </div>
           </GlowCard>

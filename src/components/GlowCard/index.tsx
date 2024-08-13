@@ -1,6 +1,7 @@
 import { CSSProperties, FC, useEffect, useRef } from "react";
 import classNames from "./glow-card.module.scss";
 import clsx from "clsx";
+import { useGlowCard } from "../../utils/zustand/glowCard";
 
 type GlowCardProps = {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ type GlowCardProps = {
 
 const GlowCard: FC<GlowCardProps> = (props) => {
   const mainRef = useRef<HTMLDivElement>(null);
+  const { color } = useGlowCard();
 
   useEffect(() => {
     if (mainRef.current) {
@@ -26,7 +28,7 @@ const GlowCard: FC<GlowCardProps> = (props) => {
     <div
       ref={mainRef}
       className={clsx(classNames.main, props.className ?? "")}
-      style={{ "--glow-color": "#83bbff" } as CSSProperties}
+      style={{ "--glow-color": color } as CSSProperties}
       data-size={props.size ?? "default"}
     >
       <div className={classNames.content}>{props.children}</div>
