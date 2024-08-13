@@ -42,7 +42,7 @@
       }
       &:focus {
         border: 1.5px solid #2f4462;
-        box-shadow: 0 0 0 2px #5474a530;
+        box-shadow: 0px 0px 30px 5px rgba(14, 164, 233, 0.243);
       }
       &.error {
         color: colors.$red-500;

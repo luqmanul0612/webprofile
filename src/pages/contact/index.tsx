@@ -8,6 +8,7 @@ import TextArea from "../../components/TextArea";
 import GlowCard from "../../components/GlowCard";
 import { Mail, MapPin, Phone } from "lucide-react";
 import GlowButton from "../../components/GlowButton";
+import { useEffect, useRef } from "react";
 
 const infoData = [
   {
@@ -39,6 +40,12 @@ export const validationSchema = yup.object().shape({
 type Message = yup.InferType<typeof validationSchema>;
 
 const ContactPage = () => {
+  const nameRef = useRef<HTMLInputElement>();
+
+  useEffect(() => {
+    if (nameRef.current) nameRef.current.focus();
+  }, []);
+
   const form = useForm<Message>({
     mode: "all",
     reValidateMode: "onChange",
@@ -76,6 +83,7 @@ const ContactPage = () => {
                 name="name"
                 render={({ field, fieldState }) => (
                   <TextField
+                    ref={nameRef}
                     label="Name"
                     placeholder="Type your Name"
                     value={field.value}
