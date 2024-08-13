@@ -20,6 +20,7 @@
     width: calc(100% + 40px);
     border-radius: 0;
     height: 80px;
+    z-index: 100;
     &::before,
     &::after {
       border-radius: 0;
@@ -29,24 +30,98 @@
       width: 100%;
       border-radius: 0;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 20px 0;
       .logo {
+        display: flex;
+        align-items: center;
         font-size: 25px;
         font-weight: 600;
         color: colors.$sky-200;
         position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          display: flex;
+        .name {
+          &::after {
+            content: "";
+            position: absolute;
+            display: flex;
+            right: -11px;
+            top: 22px;
+            width: 7px;
+            height: 7px;
+            min-width: 7px;
+            min-height: 7px;
+            border-radius: 100%;
+            background-color: colors.$sky-500;
+          }
+        }
+        .dot {
           right: -11px;
           top: 22px;
           width: 7px;
           height: 7px;
-          min-width: 5px;
-          min-height: 5px;
+          min-width: 7px;
+          min-height: 7px;
           border-radius: 100%;
           background-color: colors.$sky-500;
+        }
+      }
+      .rightItems {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .btnResume {
+          color: colors.$sky-300;
+          background-color: #0ea4e932;
+          &:hover {
+            color: colors.$sky-100;
+            background-color: colors.$sky-600;
+          }
+        }
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+        .menuItem {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 10px 5px;
+          border-radius: 5px;
+          position: relative;
+          color: #bfdbfe98;
+          transition: 0.3s all ease-in-out;
+          &::before {
+            content: "";
+            display: flex;
+            position: relative;
+            left: -5px;
+            width: 5px;
+            height: 5px;
+            min-width: 5px;
+            min-height: 5px;
+            border-radius: 100%;
+            background-color: colors.$sky-300;
+            opacity: 0;
+          }
+          &:hover {
+            color: colors.$sky-100;
+            &::after {
+              opacity: 0.2;
+            }
+          }
+          &.active {
+            color: colors.$sky-300;
+            cursor: default;
+            &::before {
+              opacity: 1;
+            }
+            &:hover {
+              background-color: transparent;
+            }
+          }
         }
       }
     }

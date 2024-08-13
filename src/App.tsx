@@ -8,13 +8,15 @@ export default function App() {
   const element = useRoutes([
     {
       path: "/",
-      element: <Navbar />,
-      children: [
-        {
-          path: "/",
-          element: <HomePage />,
-        },
-      ],
+      element: <HomePage />,
+    },
+    {
+      path: "/portofolios",
+      element: <>a</>,
+    },
+    {
+      path: "/experiences",
+      element: <>a</>,
     },
   ]);
 
@@ -23,8 +25,10 @@ export default function App() {
   if (!element) return null;
 
   return (
-    <AnimatePresence mode="wait">
-      {React.cloneElement(element, { key: location.pathname })}
-    </AnimatePresence>
+    <Navbar>
+      <AnimatePresence mode="wait">
+        {React.cloneElement(element, { key: location.pathname })}
+      </AnimatePresence>
+    </Navbar>
   );
 }

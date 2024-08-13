@@ -5,12 +5,22 @@ import Linkedin from "/src/assets/linkedin.svg?react";
 import Github from "/src/assets/github.svg?react";
 import GlowCard from "../../components/GlowCard";
 import GlowButton from "../../components/GlowButton";
+import { useState } from "react";
+import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div className={classNames.main}>
       <div className={classNames.container}>
-        <div className={classNames.content}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className={classNames.content}
+        >
           <GlowCard size="large" className={classNames.mainContent}>
             <div className={classNames.textWrapper}>
               <p>Web Developer</p>
@@ -45,11 +55,36 @@ const HomePage = () => {
               </div>
             </div>
           </GlowCard>
-        </div>
-        <div className={classNames.imageWrapper}>
-          <img src={meBlack} className={classNames.image} />
-          <div className={classNames.circle} />
-        </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className={classNames.imageWrapper}
+        >
+          <img
+            src={meBlack}
+            onLoad={() => setIsLoaded(true)}
+            className={clsx(classNames.image, {
+              [classNames.isLoaded]: isLoaded,
+            })}
+          />
+          <div
+            className={clsx(classNames.circle, {
+              [classNames.isLoaded]: isLoaded,
+            })}
+          />
+          <div
+            className={clsx(classNames.circle, {
+              [classNames.isLoaded]: isLoaded,
+            })}
+          />
+          <div
+            className={clsx(classNames.circle, {
+              [classNames.isLoaded]: isLoaded,
+            })}
+          />
+        </motion.div>
       </div>
     </div>
   );
