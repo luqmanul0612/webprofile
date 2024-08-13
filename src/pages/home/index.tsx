@@ -8,12 +8,45 @@ import GlowButton from "../../components/GlowButton";
 import { useState } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import ModalMessage from "../../components/ModalMessage";
+
+const medsosData = [
+  {
+    icon: <Github />,
+    url: "https://github.com/luqmanul0612/",
+  },
+  {
+    icon: <Linkedin />,
+    url: "https://linkedin.com/in/luqmanul0612/",
+  },
+  {
+    icon: <Instagram />,
+    url: "https://www.instagram.com/luqmanul.hakem/",
+  },
+];
 
 const HomePage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [modalMessage, setModalMessage] = useState({ open: false, key: 0 });
+
+  const contactMe = () => {
+    setModalMessage({
+      open: true,
+      key: Date.now(),
+    });
+  };
+
+  const onClickUrl = (url: string): void => {
+    window.open(url, "_blank");
+  };
 
   return (
     <motion.div exit={{ opacity: 0 }} className={classNames.main}>
+      <ModalMessage
+        key={modalMessage.key}
+        open={modalMessage.open}
+        onClose={() => setModalMessage((prev) => ({ ...prev, open: false }))}
+      />
       <div className={classNames.container}>
         <motion.div
           initial={{ opacity: 0 }}
@@ -39,19 +72,24 @@ const HomePage = () => {
               </p>
             </div>
             <div className={classNames.buttonWrapper}>
-              <GlowButton particles={15} playAnimationOnMobile>
+              <GlowButton
+                particles={15}
+                playAnimationOnMobile
+                onClick={contactMe}
+              >
                 Contact Me
               </GlowButton>
               <div className={classNames.medsosContent}>
-                <GlowButton isIcon particles={10}>
-                  <Instagram className={classNames.medsos} />
-                </GlowButton>
-                <GlowButton isIcon particles={10}>
-                  <Linkedin className={classNames.medsos} />
-                </GlowButton>
-                <GlowButton isIcon particles={10}>
-                  <Github className={classNames.medsos} />
-                </GlowButton>
+                {medsosData.map((data) => (
+                  <GlowButton
+                    key={data.url}
+                    onClick={() => onClickUrl(data.url)}
+                    isIcon
+                    particles={10}
+                  >
+                    {data.icon}
+                  </GlowButton>
+                ))}
               </div>
             </div>
           </GlowCard>
