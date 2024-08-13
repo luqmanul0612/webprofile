@@ -11,7 +11,7 @@
     margin-bottom: 5px;
   }
   &.error > label {
-    color: colors.$red-500;
+    color: colors.$red-400;
   }
   &.disabled > label {
     color: colors.$slate-300;
@@ -34,6 +34,9 @@
       padding-right: 35px;
       height: 46px;
       transition: 0.2s all ease-in-out;
+      &:hover {
+        border: 1.5px solid #2f4462;
+      }
       &::placeholder {
         color: colors.$slate-600;
       }
@@ -43,10 +46,10 @@
       }
       &.error {
         color: colors.$red-500;
-        border: 1.5px solid colors.$red-500;
+        border: 1.5px solid colors.$red-400;
         box-shadow: 0 0 0 2px #ff53533e;
         &::placeholder {
-          color: colors.$red-500;
+          color: colors.$red-400;
         }
       }
       &:disabled {
@@ -170,7 +173,7 @@
     margin-top: 3px;
   }
   &.error > .helpertext {
-    color: colors.$red-500;
+    color: colors.$red-400;
   }
   &.disabled > .helpertext {
     color: colors.$slate-500;
