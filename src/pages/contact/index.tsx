@@ -40,7 +40,7 @@ export const validationSchema = yup.object().shape({
 type Message = yup.InferType<typeof validationSchema>;
 
 const ContactPage = () => {
-  const nameRef = useRef<HTMLInputElement>();
+  const nameRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (nameRef.current) nameRef.current.focus();
