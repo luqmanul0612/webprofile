@@ -34,7 +34,7 @@ const ResumeBtn = () => {
       className={classNames.main}
       onMouseEnter={() => setColor("#f43f5e")}
       onMouseLeave={() => setColor(defaultColor)}
-      onClick={() => downloadFile("cv-luqman-13-08-2024.pdf")}
+      onClick={() => downloadFile("cv-porto-luqman-13-08-2024.pdf")}
     >
       CV
       <ArrowDownToLineIcon size={20} />
