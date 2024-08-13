@@ -4,6 +4,7 @@ import GlowCard from "../GlowCard";
 import clsx from "clsx";
 import { FC } from "react";
 import GlowButton from "../GlowButton";
+import { motion } from "framer-motion";
 
 const menuData = [
   {
@@ -33,10 +34,16 @@ const Navbar: FC<NavbarProps> = (props) => {
       <div className={classNames.container}>
         <GlowCard size="large" className={classNames.navbar}>
           <div className={classNames.logo}>
-            {pathname !== "/" && (
-              <span className={classNames.name}>Luqman</span>
-            )}
-            {pathname === "/" && <div className={classNames.dot} />}
+            <motion.span
+              initial={{ opacity: 0, display: "none" }}
+              animate={{
+                opacity: pathname !== "/" ? 1 : 0,
+                display: pathname !== "/" ? "flex" : "none",
+              }}
+              className={classNames.name}
+            >
+              Luqman
+            </motion.span>
           </div>
           <div className={classNames.rightItems}>
             <ul className={classNames.menu}>
