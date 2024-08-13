@@ -3,6 +3,8 @@ import { AnimatePresence } from "framer-motion";
 import { useLocation, useRoutes } from "react-router-dom";
 import HomePage from "./pages/home";
 import Navbar from "./components/navbar";
+import PortofoliosPage from "./pages/portofolios";
+import ExperiencesPage from "./pages/experiences";
 
 export default function App() {
   const element = useRoutes([
@@ -12,11 +14,11 @@ export default function App() {
     },
     {
       path: "/portofolios",
-      element: <>a</>,
+      element: <PortofoliosPage />,
     },
     {
       path: "/experiences",
-      element: <>a</>,
+      element: <ExperiencesPage />,
     },
   ]);
 
