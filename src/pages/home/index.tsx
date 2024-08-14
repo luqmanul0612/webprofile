@@ -103,21 +103,23 @@ const HomePage = () => {
               [classNames.isLoaded]: isLoaded,
             })}
           />
-          <div
-            className={clsx(classNames.circle, {
-              [classNames.isLoaded]: isLoaded,
-            })}
-          />
-          <div
-            className={clsx(classNames.circle, {
-              [classNames.isLoaded]: isLoaded,
-            })}
-          />
-          <div
-            className={clsx(classNames.circle, {
-              [classNames.isLoaded]: isLoaded,
-            })}
-          />
+          <div className={classNames.circleWrapper}>
+            <div
+              className={clsx(classNames.circle, {
+                [classNames.isLoaded]: isLoaded,
+              })}
+            />
+            <div
+              className={clsx(classNames.circle, {
+                [classNames.isLoaded]: isLoaded,
+              })}
+            />
+            <div
+              className={clsx(classNames.circle, {
+                [classNames.isLoaded]: isLoaded,
+              })}
+            />
+          </div>
         </motion.div>
       </div>
     </motion.div>

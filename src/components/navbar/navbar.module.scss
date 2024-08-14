@@ -1,4 +1,5 @@
 @use "/src/utils/styles/colors.scss";
+@use "/src/utils/styles/media-screen.scss";
 
 .main {
   display: flex;
@@ -26,33 +27,48 @@
       border-radius: 0;
     }
     > div {
-      max-width: calc(1200px - 80px);
-      width: 100%;
       border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
+      width: 100%;
+      width: calc(100% - 80px);
+      @include media-screen.breakpoint-xl {
+        width: 100%;
+        max-width: calc(1200px - 80px);
+      }
       .logo {
         display: flex;
         align-items: center;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 600;
         color: colors.$sky-200;
         position: relative;
+        @include media-screen.breakpoint-xl {
+          font-size: 25px;
+        }
         .name {
           &::after {
             content: "";
             position: absolute;
             display: flex;
-            right: -11px;
-            top: 22px;
-            width: 7px;
-            height: 7px;
-            min-width: 7px;
-            min-height: 7px;
+            right: -8px;
+            top: 20px;
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            min-height: 6px;
             border-radius: 100%;
             background-color: colors.$sky-500;
+            @include media-screen.breakpoint-xl {
+              right: -11px;
+              top: 22px;
+              width: 7px;
+              height: 7px;
+              min-width: 7px;
+              min-height: 7px;
+            }
           }
         }
         .dot {
@@ -80,8 +96,11 @@
         }
       }
       .menu {
-        display: flex;
+        display: none;
         gap: 20px;
+        @include media-screen.breakpoint-md {
+          display: flex;
+        }
         .menuItem {
           display: flex;
           align-items: center;

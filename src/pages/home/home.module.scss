@@ -201,11 +201,25 @@
       flex-direction: column;
       width: 100%;
       min-width: 100%;
+      box-sizing: border-box;
       position: relative;
       overflow: hidden;
+      padding: 0 10px;
       @include media-screen.breakpoint-md {
         width: 45%;
+        padding: 0;
         min-width: 45%;
+      }
+      .circleWrapper {
+        width: calc(100% - 20px);
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 10px;
+        top: 0;
+        @include media-screen.breakpoint-md {
+          left: 0;
+        }
       }
       .circle {
         display: flex;
