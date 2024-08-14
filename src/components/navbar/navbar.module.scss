@@ -152,6 +152,9 @@
           border: 1.5px solid transparent;
           color: colors.$sky-200;
           transition: 0.3s all ease-in-out;
+          @include media-screen.breakpoint-md {
+            display: none;
+          }
           &:hover {
             background-color: #13243b;
             box-shadow: 0 0 1px 2px colors.$sky-600;
