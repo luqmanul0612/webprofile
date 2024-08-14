@@ -8,6 +8,7 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  box-sizing: border-box;
   padding: 0 5px;
   @include media-screen.breakpoint-md {
     padding: 0;
@@ -69,15 +70,22 @@
         min-width: 45%;
       }
       .infoCard {
-        width: fit-content;
+        width: 100%;
+        @include media-screen.breakpoint-md {
+          width: fit-content;
+        }
         .infoCardBody {
+          width: 100%;
           > div {
             display: flex;
             align-items: center;
             gap: 10px;
-            width: fit-content;
+            width: 100%;
             padding: 10px 20px;
-            padding-right: 40px;
+            @include media-screen.breakpoint-md {
+              padding-right: 40px;
+              width: fit-content;
+            }
             .infoIcon {
               display: flex;
               align-items: center;
