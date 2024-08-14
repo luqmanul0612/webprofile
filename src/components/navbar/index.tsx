@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { FC, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ResumeBtn from "../ResumeButton";
+import { ChartNoAxesColumn } from "lucide-react";
 
 const menuData = [
   {
@@ -33,7 +34,7 @@ const Navbar: FC<NavbarProps> = (props) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [startAnimate, setStartAnimate] = useState(false);
-  console.log("first", { startAnimate });
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -86,6 +87,9 @@ const Navbar: FC<NavbarProps> = (props) => {
             >
               <ResumeBtn />
             </motion.div>
+            <button className={classNames.mobileMenu}>
+              <ChartNoAxesColumn />
+            </button>
           </div>
         </GlowCard>
         <AnimatePresence mode="wait">{props.children}</AnimatePresence>
