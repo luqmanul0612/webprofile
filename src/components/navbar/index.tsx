@@ -88,7 +88,7 @@ const Navbar: FC<NavbarProps> = (props) => {
               <ResumeBtn />
             </motion.div>
             <button className={classNames.mobileMenu}>
-              <ChartNoAxesColumn />
+              <ChartNoAxesColumn size={25} />
             </button>
           </div>
         </GlowCard>

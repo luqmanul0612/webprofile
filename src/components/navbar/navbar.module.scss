@@ -143,10 +143,19 @@
           }
         }
         .mobileMenu {
-          background-color: transparent;
+          background-color: #0d1a2c;
+          border-radius: 10px;
+          padding: 6px 8px;
           border: none;
           outline: none;
+          cursor: pointer;
+          border: 1.5px solid transparent;
           color: colors.$sky-200;
+          transition: 0.3s all ease-in-out;
+          &:hover {
+            background-color: #13243b;
+            box-shadow: 0 0 1px 2px colors.$sky-600;
+          }
           > svg {
             transform: rotate(-90deg);
           }
