@@ -57,7 +57,7 @@
           opacity: 0.8;
           width: fit-content;
           transition: 0.3s all ease-in-out;
-          @include media-screen.breakpoint-md {
+          @include media-screen.breakpoint-sm {
             font-size: 20px;
           }
           &:hover {
@@ -81,7 +81,7 @@
             color: colors.$sky-400;
             opacity: 1;
           }
-          @include media-screen.breakpoint-md {
+          @include media-screen.breakpoint-sm {
             font-size: 45px;
           }
         }
@@ -97,7 +97,7 @@
           &:hover {
             color: colors.$sky-400;
           }
-          @include media-screen.breakpoint-md {
+          @include media-screen.breakpoint-sm {
             font-size: 38px;
           }
           > span {
@@ -172,7 +172,7 @@
           margin-top: 10px;
           opacity: 0.6;
           transition: 0.3s all ease-in-out;
-          @include media-screen.breakpoint-md {
+          @include media-screen.breakpoint-sm {
             font-size: 16px;
           }
           &:hover {
