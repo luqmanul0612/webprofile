@@ -13,10 +13,12 @@
     align-items: center;
     justify-content: center;
     padding: 40px 0;
+    margin-top: 50px;
     gap: 10px;
     width: 100%;
     @include media-screen.breakpoint-sm {
       flex-direction: row;
+      margin-top: 0;
     }
     .content {
       display: flex;
@@ -30,7 +32,10 @@
       }
     }
     .mainContent {
-      padding: 40px;
+      padding: 20px;
+      @include media-screen.breakpoint-sm {
+        padding: 40px;
+      }
       > div {
         gap: 40px;
         display: flex;
