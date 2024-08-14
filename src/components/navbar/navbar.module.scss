@@ -86,6 +86,7 @@
         display: flex;
         gap: 20px;
         align-items: center;
+        height: 100%;
         .btnResume {
           color: colors.$sky-300;
           background-color: #0ea4e932;
@@ -152,6 +153,7 @@
           border: 1.5px solid transparent;
           color: colors.$sky-200;
           transition: 0.3s all ease-in-out;
+          transform: translateY(2px);
           @include media-screen.breakpoint-md {
             display: none;
           }
