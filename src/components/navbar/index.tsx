@@ -44,7 +44,7 @@ const Navbar: FC<NavbarProps> = (props) => {
     >
       <div className={classNames.container}>
         <GlowCard size="large" className={classNames.navbar}>
-          <div className={classNames.logo}>
+          <div className={classNames.logo} onClick={() => navigate("/")}>
             <motion.span
               initial={{ opacity: 0, display: "none" }}
               animate={{
