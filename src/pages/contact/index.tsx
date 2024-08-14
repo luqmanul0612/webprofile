@@ -31,7 +31,7 @@ const infoData = [
   },
 ];
 
-export const validationSchema = yup.object().shape({
+const validationSchema = yup.object().shape({
   name: yup.string().required("Required"),
   email: yup.string().email("Invalid email").required("Required"),
   message: yup.string().required("Required"),
