@@ -16,7 +16,7 @@
     margin-top: 50px;
     gap: 10px;
     width: 100%;
-    @include media-screen.breakpoint-sm {
+    @include media-screen.breakpoint-md {
       flex-direction: row;
       margin-top: 0;
     }
@@ -26,14 +26,14 @@
       width: 100%;
       min-width: 100%;
       gap: 10px;
-      @include media-screen.breakpoint-sm {
+      @include media-screen.breakpoint-md {
         width: 55%;
         min-width: 55%;
       }
     }
     .mainContent {
       padding: 20px;
-      @include media-screen.breakpoint-sm {
+      @include media-screen.breakpoint-md {
         padding: 40px;
       }
       > div {
@@ -186,7 +186,7 @@
       min-width: 100%;
       position: relative;
       overflow: hidden;
-      @include media-screen.breakpoint-sm {
+      @include media-screen.breakpoint-md {
         width: 45%;
         min-width: 45%;
       }
