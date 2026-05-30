@@ -6,69 +6,36 @@ import { ExternalLink, Github, Layers } from "lucide-react";
 const portfolioData = [
   {
     id: 1,
-    title: "Web Profile",
+    title: "Andi Teknik",
     description:
-      "Personal portfolio website built with React, Vite, TypeScript, and SCSS. Features animated glow cards, framer-motion page transitions, and responsive layout.",
-    tech: ["React", "TypeScript", "Vite", "SCSS", "Framer Motion"],
-    github: "https://github.com/luqmanul0612/",
-    live: null,
-    category: "Personal",
+      "Responsive landing page for a local AC repair business in Jabodetabek. Includes service catalog, pricing tiers, area coverage, and contact integration — built with smooth Framer Motion animations.",
+    tech: ["Next.js", "Typescript", "Framer Motion"],
+    github: "https://github.com/luqmanul0612/anditeknik",
+    live: "https://anditeknik.vercel.app/",
+    category: "Freelance",
     featured: true,
   },
   {
     id: 2,
-    title: "Microfrontend Dashboard",
+    title: "Sonata Web",
     description:
-      "Enterprise-grade admin dashboard built using Module Federation. Multiple independently deployable micro-apps communicating through shared state.",
-    tech: ["React", "Module Federation", "TypeScript", "Zustand", "Nginx"],
+      "Freelance company profile for an Indonesian oil & gas manpower consulting firm. Includes service showcases, project portfolio, latest news, and contact section with bilingual (EN/ID) support.",
+    tech: ["Next.js", "Typescript"],
     github: null,
-    live: null,
-    category: "Work",
+    live: "https://sonata-web-nu.vercel.app/",
+    category: "Freelance",
     featured: true,
   },
   {
     id: 3,
-    title: "E-Commerce Platform",
+    title: "Penerbit Dapur Kata",
     description:
-      "Full-stack e-commerce web app with product catalog, cart management, user auth, and payment gateway integration.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Stripe"],
-    github: "https://github.com/luqmanul0612/",
-    live: null,
-    category: "Freelance",
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Real-time Chat App",
-    description:
-      "Chat application with real-time messaging, rooms, online presence indicator, and message history using WebSocket.",
-    tech: ["React", "Socket.io", "Node.js", "MongoDB"],
-    github: "https://github.com/luqmanul0612/",
-    live: null,
-    category: "Personal",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Component Library",
-    description:
-      "Internal reusable UI component library with accessible, composable components designed for consistent design language across projects.",
-    tech: ["React", "TypeScript", "SCSS", "Storybook", "Radix UI"],
+      "Freelance company profile website for Penerbit DapurKata, an Indonesian book publisher. Features a searchable book catalog and contact information.",
+    tech: ["Next.js", "Typescript", "MongoDB", "JWT"],
     github: null,
-    live: null,
-    category: "Work",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Landing Page Builder",
-    description:
-      "Drag-and-drop landing page builder for small businesses, allowing non-technical users to compose and publish pages without code.",
-    tech: ["React", "dnd-kit", "TypeScript", "Firebase", "Tailwind"],
-    github: "https://github.com/luqmanul0612/",
-    live: null,
+    live: "https://www.penerbitdapurkata.com/",
     category: "Freelance",
-    featured: false,
+    featured: true,
   },
 ];
 
@@ -87,7 +54,11 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
 };
 
 const PortofoliosPage = () => {
@@ -151,7 +122,9 @@ const PortofoliosPage = () => {
 
                   <div className={classNames.cardContent}>
                     <div className={classNames.titleRow}>
-                      <h2 className={classNames.projectTitle}>{project.title}</h2>
+                      <h2 className={classNames.projectTitle}>
+                        {project.title}
+                      </h2>
                       <span
                         className={classNames.categoryBadge}
                         style={{ color: categoryColors[project.category] }}
@@ -159,7 +132,9 @@ const PortofoliosPage = () => {
                         {project.category}
                       </span>
                     </div>
-                    <p className={classNames.description}>{project.description}</p>
+                    <p className={classNames.description}>
+                      {project.description}
+                    </p>
                   </div>
 
                   <div className={classNames.techStack}>
