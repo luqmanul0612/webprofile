@@ -1,28 +1,227 @@
 @use "/src/utils/styles/colors.scss";
+@use "/src/utils/styles/media-screen.scss";
 
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
-  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0;
-    gap: 10px;
     width: 100%;
-    .content {
+    max-width: 800px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+
+    .header {
+      margin-bottom: 48px;
+      text-align: left;
+
+      .subtitle {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: colors.$sky-400;
+        margin: 0 0 8px 0;
+        opacity: 0.9;
+      }
+
+      .title {
+        font-size: 34px;
+        font-weight: 800;
+        color: colors.$sky-100;
+        margin: 0;
+        letter-spacing: -0.02em;
+
+        @include media-screen.breakpoint-md {
+          font-size: 44px;
+        }
+      }
+    }
+
+    .timeline {
       display: flex;
       flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .timelineItem {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      position: relative;
+      padding-bottom: 36px;
+
+      .timelineDot {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: colors.$sky-400;
+        margin-top: 24px;
+        box-shadow: 0 0 12px colors.$sky-500;
+        position: relative;
+        z-index: 2;
+      }
+
+      .timelineLine {
+        position: absolute;
+        left: 5px;
+        top: 36px;
+        width: 2px;
+        bottom: 0;
+        background: linear-gradient(to bottom, colors.$sky-700, transparent);
+        z-index: 1;
+      }
+
+      .card {
+        flex: 1;
+        padding: 24px;
+
+        .cardTop {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 12px;
+          margin-bottom: 12px;
+
+          .cardHeader {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+
+            .iconWrapper {
+              width: 36px;
+              height: 36px;
+              min-width: 36px;
+              border-radius: 8px;
+              background-color: rgba(colors.$sky-600, 0.25);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: colors.$sky-300;
+              margin-top: 2px;
+            }
+
+            .role {
+              font-size: 17px;
+              font-weight: 700;
+              color: colors.$sky-100;
+              margin: 0 0 4px 0;
+              line-height: 1.2;
+            }
+
+            .meta {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+
+              .company {
+                font-size: 13px;
+                font-weight: 500;
+                color: colors.$sky-300;
+                opacity: 0.85;
+              }
+
+              .externalIcon {
+                color: colors.$sky-400;
+                opacity: 0.7;
+              }
+            }
+          }
+
+          .badges {
+            flex-shrink: 0;
+          }
+
+          .typeBadge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background-color: rgba(colors.$sky-600, 0.2);
+            color: colors.$sky-300;
+            border: 1px solid rgba(colors.$sky-500, 0.3);
+            white-space: nowrap;
+          }
+        }
+
+        .cardMeta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          margin-bottom: 14px;
+
+          .metaItem {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: colors.$sky-200;
+            opacity: 0.6;
+          }
+        }
+
+        .description {
+          font-size: 13px;
+          line-height: 1.7;
+          color: colors.$sky-200;
+          opacity: 0.7;
+          margin: 0 0 16px 0;
+        }
+
+        .highlights {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 16px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: colors.$sky-200;
+            opacity: 0.8;
+            line-height: 1.5;
+
+            .bullet {
+              flex-shrink: 0;
+              width: 5px;
+              height: 5px;
+              min-width: 5px;
+              border-radius: 50%;
+              background-color: colors.$sky-400;
+              margin-top: 7px;
+            }
+          }
+        }
+
+        .techStack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 4px;
+
+          .techBadge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background-color: rgba(colors.$sky-900, 0.6);
+            color: colors.$sky-300;
+            border: 1px solid rgba(colors.$sky-700, 0.5);
+            letter-spacing: 0.02em;
+          }
+        }
+      }
     }
   }
-}
-
-.onProgress {
-  font-size: 30px;
-  font-weight: 500;
-  color: colors.$sky-200;
 }

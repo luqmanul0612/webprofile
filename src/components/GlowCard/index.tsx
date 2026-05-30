@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useRef } from "react";
+import { CSSProperties, FC, useRef } from "react";
 import classNames from "./glow-card.module.scss";
 import clsx from "clsx";
 import { useGlowCard } from "../../utils/zustand/glowCard";
@@ -13,16 +13,13 @@ const GlowCard: FC<GlowCardProps> = (props) => {
   const mainRef = useRef<HTMLDivElement>(null);
   const { color } = useGlowCard();
 
-  useEffect(() => {
-    if (mainRef.current) {
-      mainRef.current.onmousemove = function (e) {
-        const x = e.pageX - mainRef.current!.offsetLeft;
-        const y = e.pageY - mainRef.current!.offsetTop;
-        mainRef.current!.style.setProperty("--x", x + "px");
-        mainRef.current!.style.setProperty("--y", y + "px");
-      };
-    }
-  }, []);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = mainRef.current!.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    mainRef.current!.style.setProperty("--x", x + "px");
+    mainRef.current!.style.setProperty("--y", y + "px");
+  };
 
   return (
     <div
@@ -30,6 +27,7 @@ const GlowCard: FC<GlowCardProps> = (props) => {
       className={clsx(classNames.main, props.className ?? "")}
       style={{ "--glow-color": color } as CSSProperties}
       data-size={props.size ?? "default"}
+      onMouseMove={handleMouseMove}
     >
       <div className={classNames.content}>{props.children}</div>
     </div>

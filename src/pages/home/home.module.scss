@@ -7,279 +7,382 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 0 5px;
+  padding: 0 16px;
   box-sizing: border-box;
+
   @include media-screen.breakpoint-md {
     padding: 0;
   }
+
   .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0;
-    margin-top: 50px;
-    gap: 10px;
+    align-items: stretch;
+    padding: 90px 0 60px;
+    gap: 24px;
     width: 100%;
-    @include media-screen.breakpoint-md {
-      flex-direction: row;
-      margin-top: 0;
-    }
-    .content {
+    max-width: 1200px;
+
+    /* Hero */
+    .hero {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 16px;
       width: 100%;
-      min-width: 100%;
-      gap: 10px;
+
       @include media-screen.breakpoint-md {
-        width: 55%;
-        min-width: 55%;
+        flex-direction: row;
+        gap: 20px;
       }
-    }
-    .mainContent {
-      padding: 20px;
-      @include media-screen.breakpoint-md {
-        padding: 40px;
-      }
-      > div {
-        gap: 40px;
+
+      .content {
         display: flex;
         flex-direction: column;
+        width: 100%;
+
+        @include media-screen.breakpoint-md {
+          width: 55%;
+          min-width: 55%;
+        }
       }
-      .textWrapper {
-        display: flex;
-        flex-direction: column;
-        > p:nth-child(1) {
-          font-size: 18px;
-          font-weight: 600;
-          color: colors.$sky-200;
-          margin: 0;
-          opacity: 0.8;
-          width: fit-content;
-          transition: 0.3s all ease-in-out;
-          @include media-screen.breakpoint-sm {
-            font-size: 20px;
-          }
-          &:hover {
-            color: colors.$sky-400;
-            opacity: 1;
-          }
+
+      .mainContent {
+        padding: 24px;
+
+        @include media-screen.breakpoint-md {
+          padding: 40px;
         }
-        > p:nth-child(2) {
-          font-size: 35px;
-          font-weight: 700;
-          color: colors.$sky-200;
-          margin: 0;
-          line-height: 1.2;
-          opacity: 0.8;
-          width: fit-content;
-          transition: 0.3s all ease-in-out;
-          > span {
-            font-weight: 500;
-          }
-          &:hover {
-            color: colors.$sky-400;
-            opacity: 1;
-          }
-          @include media-screen.breakpoint-sm {
-            font-size: 45px;
-          }
+
+        > div {
+          gap: 24px;
+          display: flex;
+          flex-direction: column;
         }
-        .name {
-          font-size: 30px;
-          font-weight: 700;
-          color: colors.$sky-200;
-          margin: 0;
-          line-height: 1.2;
-          width: fit-content;
-          position: relative;
-          transition: 0.3s all ease-in-out;
-          &:hover {
+
+        .textWrapper {
+          display: flex;
+          flex-direction: column;
+
+          > p:nth-child(1) {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             color: colors.$sky-400;
+            margin: 0 0 8px 0;
+            opacity: 0.9;
           }
-          @include media-screen.breakpoint-sm {
+
+          > p:nth-child(2) {
             font-size: 38px;
-          }
-          > span {
-            font-weight: 500;
-          }
-          @keyframes animateDot {
-            0% {
-              opacity: 0;
-              left: 0;
+            font-weight: 800;
+            color: colors.$sky-100;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+
+            > span {
+              font-weight: 400;
+              color: colors.$sky-300;
+              opacity: 0.7;
             }
-            20% {
-              opacity: 1;
-            }
-            80% {
-              opacity: 1;
-            }
-            100% {
-              left: 95%;
-              opacity: 0;
+
+            @include media-screen.breakpoint-sm {
+              font-size: 50px;
             }
           }
-          .line {
-            position: absolute;
-            min-height: 2px;
-            width: 100%;
-            background-color: #0285c736;
-            bottom: 0;
-            left: 0;
-            z-index: 2;
-          }
-          .dot {
-            position: absolute;
-            min-height: 80px;
-            min-width: 160px;
-            width: 160px;
-            height: 80px;
-            overflow: hidden;
-            top: -80px;
-            left: 0;
-            transform: translateX(-80px);
-            animation: animateDot 10s linear infinite;
-            &::before {
-              content: "";
+
+          .name {
+            font-size: 28px;
+            font-weight: 800;
+            color: colors.$sky-100;
+            margin: 0;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            width: fit-content;
+            position: relative;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+              color: colors.$sky-200;
+            }
+
+            @include media-screen.breakpoint-sm {
+              font-size: 38px;
+            }
+
+            > span {
+              font-weight: 400;
+              color: colors.$sky-300;
+            }
+
+            @keyframes animateDot {
+              0% { opacity: 0; left: 0; }
+              20% { opacity: 1; }
+              80% { opacity: 1; }
+              100% { left: 95%; opacity: 0; }
+            }
+
+            .line {
               position: absolute;
-              min-height: 160px;
+              min-height: 2px;
+              width: 100%;
+              background-color: #0285c736;
+              bottom: 0;
+              left: 0;
+              z-index: 2;
+            }
+
+            .dot {
+              position: absolute;
+              min-height: 80px;
               min-width: 160px;
               width: 160px;
-              height: 160px;
-              background: radial-gradient(
-                colors.$sky-300,
-                transparent,
-                transparent,
-                transparent
-              );
-              opacity: 0.2;
-              @include media-screen.breakpoint-md {
-                opacity: 0.5;
+              height: 80px;
+              overflow: hidden;
+              top: -80px;
+              left: 0;
+              transform: translateX(-80px);
+              animation: animateDot 10s linear infinite;
+
+              &::before {
+                content: "";
+                position: absolute;
+                min-height: 160px;
+                min-width: 160px;
+                width: 160px;
+                height: 160px;
+                background: radial-gradient(colors.$sky-300, transparent, transparent, transparent);
+                opacity: 0.2;
+
+                @include media-screen.breakpoint-md {
+                  opacity: 0.5;
+                }
               }
             }
-          }
-          &:hover {
-            .dot {
+
+            &:hover .dot {
               animation-play-state: paused;
             }
           }
-        }
-        > p:nth-child(4) {
-          font-size: 13px;
-          font-weight: 400;
-          color: colors.$sky-200;
-          margin: 0;
-          margin-top: 10px;
-          opacity: 0.6;
-          transition: 0.3s all ease-in-out;
-          @include media-screen.breakpoint-sm {
-            font-size: 16px;
+
+          > p:nth-child(4) {
+            font-size: 13px;
+            line-height: 1.7;
+            color: colors.$sky-200;
+            margin: 0;
+            opacity: 0.6;
+
+            @include media-screen.breakpoint-sm {
+              font-size: 15px;
+            }
           }
-          &:hover {
-            color: colors.$sky-400;
-            opacity: 1;
+        }
+
+        /* Stats */
+        .statsRow {
+          display: flex;
+          gap: 0;
+          border-top: 1px solid rgba(colors.$sky-700, 0.3);
+          border-bottom: 1px solid rgba(colors.$sky-700, 0.3);
+          padding: 16px 0;
+
+          .statItem {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            border-right: 1px solid rgba(colors.$sky-700, 0.25);
+
+            &:last-child {
+              border-right: none;
+            }
+
+            .statValue {
+              font-size: 22px;
+              font-weight: 800;
+              color: colors.$sky-300;
+              letter-spacing: -0.02em;
+
+              @include media-screen.breakpoint-sm {
+                font-size: 26px;
+              }
+            }
+
+            .statLabel {
+              font-size: 10px;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.08em;
+              color: colors.$sky-400;
+              opacity: 0.65;
+            }
+          }
+        }
+
+        .buttonWrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .buttonGroup {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+          }
+
+          .medsosContent {
+            display: flex;
+            gap: 8px;
           }
         }
       }
-      .buttonWrapper {
+
+      .imageWrapper {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        .buttonGroup {
-          display: flex;
-          gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        padding: 0 10px;
+
+        @include media-screen.breakpoint-md {
+          width: 45%;
+          min-width: 45%;
+          padding: 0;
         }
-        .medsosContent {
-          display: flex;
-          gap: 10px;
-          .medsos {
-            color: colors.$sky-200;
-            width: 30px;
+
+        .circleWrapper {
+          width: calc(100% - 20px);
+          height: 100%;
+          overflow: hidden;
+          position: absolute;
+          left: 10px;
+          top: 0;
+
+          @include media-screen.breakpoint-md {
+            left: 0;
           }
         }
-      }
-    }
-    .imageWrapper {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      min-width: 100%;
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-      padding: 0 10px;
-      @include media-screen.breakpoint-md {
-        width: 45%;
-        padding: 0;
-        min-width: 45%;
-      }
-      .circleWrapper {
-        width: calc(100% - 20px);
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        left: 10px;
-        top: 0;
-        @include media-screen.breakpoint-md {
-          left: 0;
-        }
-      }
-      .circle {
-        display: flex;
-        min-width: 90%;
-        min-height: 90%;
-        height: 90%;
-        width: 90%;
-        top: 25%;
-        right: -7%;
-        position: absolute;
-        background-color: colors.$sky-600;
-        border-radius: 100%;
-        transition: 0.5s ease-in-out all 0.5s;
-        opacity: 0;
-        &.isLoaded {
-          opacity: 0.7;
-        }
-      }
-      .circle:nth-child(2) {
-        top: 20%;
-        right: -2%;
-        opacity: 0.2;
-        opacity: 0;
-        transition: 0.5s ease-in-out all 0.8s;
-        &.isLoaded {
-          opacity: 0.2;
-        }
-      }
-      .circle:nth-child(3) {
-        top: 27%;
-        right: 4%;
-        opacity: 0.2;
-        opacity: 0;
-        transition: 0.5s ease-in-out all 1.2s;
-        &.isLoaded {
-          opacity: 0.2;
-        }
-      }
-      &:hover {
+
         .circle {
+          display: flex;
+          min-width: 90%;
+          min-height: 90%;
+          height: 90%;
+          width: 90%;
+          top: 25%;
+          right: -7%;
+          position: absolute;
+          background-color: colors.$sky-600;
+          border-radius: 100%;
+          transition: 0.5s ease-in-out all 0.5s;
+          opacity: 0;
+
+          &.isLoaded { opacity: 0.7; }
+        }
+
+        .circle:nth-child(2) {
+          top: 20%;
+          right: -2%;
+          opacity: 0;
+          transition: 0.5s ease-in-out all 0.8s;
+          &.isLoaded { opacity: 0.2; }
+        }
+
+        .circle:nth-child(3) {
+          top: 27%;
+          right: 4%;
+          opacity: 0;
+          transition: 0.5s ease-in-out all 1.2s;
+          &.isLoaded { opacity: 0.2; }
+        }
+
+        &:hover .circle {
           top: 29%;
           right: -7%;
           opacity: 0;
-          &.isLoaded {
-            opacity: 0.2;
-          }
+          &.isLoaded { opacity: 0.2; }
+        }
+
+        .image {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 2;
+          opacity: 0;
+          transition: 0.3s ease-in-out 0.2s;
+          &.isLoaded { opacity: 1; }
         }
       }
-      .image {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        z-index: 2;
-        opacity: 0;
-        transition: 0.3s ease-in-out 0.2s;
-        &.isLoaded {
-          opacity: 1;
+    }
+
+    /* Skills */
+    .skillsSection {
+      width: 100%;
+
+      .skillsLabel {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: colors.$sky-400;
+        margin: 0 0 12px 0;
+        opacity: 0.8;
+      }
+
+      .skillGroups {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        @include media-screen.breakpoint-sm {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @include media-screen.breakpoint-md {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      .skillCard {
+        padding: 16px 20px;
+
+        .groupLabel {
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          color: colors.$sky-400;
+          margin: 0 0 12px 0;
+          opacity: 0.75;
+        }
+
+        .skillList {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+
+        .skillBadge {
+          font-size: 11px;
+          font-weight: 600;
+          padding: 3px 10px;
+          border-radius: 6px;
+          background-color: rgba(colors.$sky-900, 0.6);
+          color: colors.$sky-300;
+          border: 1px solid rgba(colors.$sky-700, 0.4);
+          letter-spacing: 0.02em;
+          transition: all 0.2s;
+
+          &:hover {
+            background-color: rgba(colors.$sky-700, 0.3);
+            color: colors.$sky-100;
+            border-color: colors.$sky-500;
+          }
         }
       }
     }
