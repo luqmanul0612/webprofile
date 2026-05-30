@@ -26,7 +26,7 @@ const ResumeBtn = () => {
           originY: `${Math.random() > 0.5 ? origin() * -1 : origin()}%`,
         };
       }),
-    []
+    [],
   );
 
   return (
@@ -34,7 +34,7 @@ const ResumeBtn = () => {
       className={classNames.main}
       onMouseEnter={() => setColor("#f43f5e")}
       onMouseLeave={() => setColor(defaultColor)}
-      onClick={() => downloadFile("resume-luqman-11-09-2025.pdf")}
+      onClick={() => downloadFile("resume-muhammadluqmanulhakim.pdf")}
     >
       CV
       <ArrowDownToLineIcon size={20} />
