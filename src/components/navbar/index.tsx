@@ -62,8 +62,8 @@ const Navbar: FC<NavbarProps> = (props) => {
               <motion.div
                 animate={
                   pathname !== "/"
-                    ? { maxWidth: 120, opacity: 1 }
-                    : { maxWidth: 0, opacity: 0 }
+                    ? { maxWidth: 120, opacity: 1, pointerEvents: "auto" }
+                    : { maxWidth: 0, opacity: 0, pointerEvents: "none" }
                 }
                 style={{ overflow: startAnimate ? "hidden" : "visible" }}
                 onAnimationStart={() =>
