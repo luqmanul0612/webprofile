@@ -20,7 +20,15 @@ const medsosData = [
 const skillGroups = [
   {
     label: "Frontend",
-    skills: ["React", "TypeScript", "Vite", "SCSS", "Framer Motion", "Zustand"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "SCSS",
+      "Framer Motion",
+      "Zustand",
+    ],
   },
   {
     label: "Tools & Infra",
